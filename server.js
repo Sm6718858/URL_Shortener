@@ -8,7 +8,7 @@ const PORT = 3000;
 
     app.use(express.urlencoded({ extended: false }));
 
-     mongoose.connect(`mongodb://localhost:27017/`
+     mongoose.connect(`your connection string mongodb/`
         , {
             dbName: 'URL',
         }
