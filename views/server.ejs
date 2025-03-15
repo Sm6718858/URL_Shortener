@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL SHORTNER-2</title>
+    <style>
+        /* Gradient Background */
+body {
+    background: linear-gradient(135deg, #4b79a1, #283e51);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Glassmorphism Container */
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 40px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Input Fields */
+input {
+    margin: 10px;
+    padding: 14px;
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Placeholder Color */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Input Hover & Focus Effect */
+input:focus {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Stylish Button */
+button {
+    margin-top: 15px;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .container {
+        width: 95%;
+        padding: 30px;
+    }
+
+    input {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>URL Shortener</h1>
+        <form action="/shorten" method="POST">
+            <label for="longUrl">Enter Long Url</label>
+            <input type="text" name="longUrl" id="longUrl" required>
+            <button type="submit">Shorten</button>
+        </form>
+
+
+
+        <% if(shortUrl) { %>
+            <h2>Shortened URL</h2>
+            <a href="<%= shortUrl %>" target="_blank"><%= shortUrl %></a>
+        <% } %>
+    </div>
+</body>
+</html>
